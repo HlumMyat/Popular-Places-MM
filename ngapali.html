@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ngapali Beach</title>
+
+<style>
+@keyframes gradientMove {
+    0% { background-position: 100% 50%; }
+    50% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }   
+}
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes blurIn {
+    to { opacity: 1; filter: blur(0); }
+}
+
+body {
+    background: linear-gradient(100deg, #5b7780, #0049a3);
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: zoomIn 0.8s ease forwards;
+    transition: 0.4s ease;
+}
+
+img:hover { transform: scale(1.05); }
+
+.section {
+    background-color: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+h1, h2 {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+}
+
+p {
+    opacity: 0;
+    filter: blur(5px);
+    animation: blurIn 1s ease forwards;
+}
+
+button {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        background: linear-gradient(45deg, #ffffff, #ffd9b3);
+        color: #383838;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        transition: 0.3s ease;
+        margin: 5px 0;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            background: linear-gradient(45deg, #000, #444);
+            color: white;
+        }
+</style>
+</head>
+
+<body>
+
+<button onclick="history.back()">⬅️ Back</button>
+
+<h1>Ngapali Beach (ငပလီ ကမ်းခြေ)</h1>
+
+<div class="container">
+
+<img src="img/ngapali.jpg" alt="Ngapali Beach">
+
+<div class="text">
+<button id="translateButton" onclick="toggleLanguage()" >Switch to Burmese</button>
+
+<div class="section" id="english">
+<h2>Ngapali Beach</h2>
+<p>Ngapali Beach is one of the most beautiful beaches in Myanmar. It is located in Rakhine State near Thandwe. The beach is famous for its white sand, clear blue water, and peaceful atmosphere. Many tourists visit Ngapali Beach to relax, swim, and enjoy fresh seafood. It is a perfect place for holidays and sunset views.</p>
+</div>
+
+<div class="section" id="burmese" style="display:none;">
+<h2>ငပလီကမ်းခြေ</h2>
+<p>ငပလီကမ်းခြေသည် မြန်မာနိုင်ငံတွင် အလှဆုံးကမ်းခြေများထဲမှ တစ်ခုဖြစ်သည်။ ရခိုင်ပြည်နယ် သံတွဲမြို့အနီးတွင် တည်ရှိပြီး အဖြူရောင်သဲများ၊ ပြာလန်းလန်းရေပြင်နှင့် အေးချမ်းသောပတ်ဝန်းကျင်ကြောင့် နာမည်ကြီးသည်။ ခရီးသွားများသည် အနားယူရန်၊ ရေကူးရန်နှင့် ပင်လယ်စာများ စားသောက်ရန် ငပလီကမ်းခြေသို့ လာရောက်လည်ပတ်ကြသည်။</p>
+</div>
+</div>
+</div>
+
+<script>
+function toggleLanguage(){
+let en = document.getElementById("english");
+let mm = document.getElementById("burmese");
+let btn = document.getElementById("translateButton");
+
+if(en.style.display === "none"){
+    en.style.display="block";
+    mm.style.display="none";
+    btn.textContent="Switch to Burmese";
+}else{
+    en.style.display="none";
+    mm.style.display="block";
+    btn.textContent="Switch to English";
+}
+}
+</script>
+
+</body>
+</html>

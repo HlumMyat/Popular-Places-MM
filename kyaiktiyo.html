@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyaiktiyo Pagoda</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+@keyframes gradientMove {
+    0% { background-position: 100% 50%; }
+    50% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes blurIn {
+    to { opacity: 1; filter: blur(0); }
+}
+
+body {
+    background: linear-gradient(100deg, rgba(255,255,255,0.4), #F7971E, #FFD200);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.4);
+}
+
+h1 {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+}
+
+p {
+    opacity: 0;
+    filter: blur(5px);
+    animation: blurIn 1s ease forwards;
+}
+
+img {
+    width: 100%;
+    border-radius: 15px;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: zoomIn 0.8s ease forwards;
+    transition: 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+button {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        background: linear-gradient(45deg, #ffffff, #ffd9b3);
+        color: #383838;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        transition: 0.3s ease;
+        margin: 5px 0;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            background: linear-gradient(45deg, #000, #444);
+            color: white;
+        }
+
+</style>
+</head>
+
+<body>
+
+
+
+<div class="container mt-5 pt-4">
+
+    <button onclick="history.back()">⬅ Back</button>
+
+<h1 class="text-center mb-4">Kyaiktiyo Pagoda (ကျိုက်ထီးရိုး)</h1>
+
+<div class="row align-items-center">
+
+<div class="col-lg-5 col-md-12 mb-4">
+<img src="img/kyaiktiyo1.jpg" alt="Kyaiktiyo">
+</div>
+
+<div class="col-lg-7 col-md-12">
+
+<button id="translateButton" onclick="toggleLanguage()" class="btn btn-outline-dark mb-3">
+Switch to Burmese
+</button>
+
+<div id="english">
+<h3>Kyaiktiyo (Golden Rock)</h3>
+<p>Kyaiktiyo Pagoda, also known as the Golden Rock, is one of the most famous and sacred Buddhist pilgrimage sites in Myanmar. It is located in Mon State and sits on the top of Mount Kyaiktiyo. The pagoda is built on a large golden boulder that appears to be balancing on the edge of a cliff. According to legend, the rock remains in place because of a strand of the Buddha’s hair enshrined inside it. Every year, thousands of pilgrims and tourists visit Kyaiktiyo to pray, meditate, and admire the breathtaking views, especially at sunrise and sunset. The glowing golden rock against the sky creates a truly unforgettable sight.</p>
+<p>According to historical records and local tradition, Kyaiktiyo Pagoda is believed to have been built over 2,500 years ago during the lifetime of the Buddha. It is said that King Tissa, a Mon king, constructed the pagoda after receiving a sacred hair relic of the Buddha from a hermit. The king enshrined the hair relic inside the golden rock, which is why the rock is believed to remain balanced on the cliff. Over the centuries, the pagoda has been renovated and covered with gold leaves donated by devotees. Today, it remains one of the most important religious landmarks in Myanmar.</p>
+</div>
+
+<div id="burmese" style="display:none;">
+<h3>ကျိုက်ထီးရိုး</h3>
+<p>ကျိုက်ထီးရိုးစေတီတော်ကို ရွှေကျောက်တုံးဟုလည်း လူသိများကြပြီး မြန်မာနိုင်ငံတွင် အလွန်ထင်ရှားသော ဗုဒ္ဓဘာသာဝင်များ၏ ဘုရားဖူးရာ နေရာတစ်ခု ဖြစ်သည်။ ၎င်းသည် မွန်ပြည်နယ်ရှိ ကျိုက်ထီးရိုးတောင်ထိပ်တွင် တည်ရှိသည်။ စေတီတော်သည် ချောက်ကမ်းပါးအစွန်းပေါ်တွင် တည်ရှိသော ရွှေရောင်လိမ်းထားသည့် ကျောက်တုံးကြီးတစ်ခု၏ အပေါ်တွင် တည်ဆောက်ထားပြီး ချောက်ကမ်းပါးမှ လွင့်ကျသွားမည့်ပုံစံဖြင့် တည်ရှိနေသည်။ ဒဏ္ဍာရီအရ ကျောက်တုံးအတွင်းတွင် ဗုဒ္ဓဘုရားရှင်၏ ဆံတော်တစ်မျှင် ထည့်သွင်းထားခြင်းကြောင့် ကျောက်တုံးသည် မလွင့်ကျဘဲ တည်ရှိနေသည်ဟု ယုံကြည်ကြသည်။ နှစ်စဉ် ဘုရားဖူးများနှင့် ခရီးသွားဧည့်သည်များအများအပြား လာရောက်ကြပြီး နေထွက်ချိန်နှင့် နေဝင်ချိန်များတွင် မြင်ရသော မြင်ကွင်းသည် အလွန်လှပထင်ရှားလှသည်။</p>
+<p>သမိုင်းမှတ်တမ်းများနှင့် ဒေသခံယုံကြည်ချက်များအရ ကျိုက်ထီးရိုးဘုရားကို ဘုရားရှင် အသက်ရှင်နေစဉ်ကာလ အတွင်း လွန်ခဲ့သော နှစ်ပေါင်း ၂၅၀၀ ကျော်ခန့်တွင် တည်ဆောက်ခဲ့သည်ဟု ယုံကြည်ကြသည်။ မွန်မင်းတစ်ပါးဖြစ်သော တိဿမင်းသည် ဘုရားရှင်၏ ဆံတော်တစ်ချောင်းကို သန့်ရှင်းသော တောထဲနေဆရာတစ်ဦးထံမှ ရရှိပြီးနောက် ဘုရားကို တည်ဆောက်ခဲ့သည်ဟု ဒဏ္ဍာရီတွင် ဖော်ပြထားပါသည်။ မင်းသည် ထိုဆံတော်ကို ရွှေကျောက်တုံးအတွင်း ထည့်သွင်းထားခဲ့ပြီး ထို့ကြောင့် ကျောက်တုံးသည် မကျဘဲ ချိန်ညှိတည်ရှိနေသည်ဟု ယုံကြည်ကြပါသည်။ ရာစုနှစ်များအတွင်း ယုံကြည်သူများမှ ရွှေစက္ကူများကပ်လှူကာ ပြုပြင်ထိန်းသိမ်းလာခဲ့ကြသည်။ ယနေ့တွင်လည်း မြန်မာနိုင်ငံ၏ အရေးကြီးဆုံး ဘုရားပူဇော်ရာနေရာများထဲမှ တစ်ခုအဖြစ် ရပ်တည်လျက်ရှိပါသည်။</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+function toggleLanguage() {
+let en = document.getElementById("english");
+let mm = document.getElementById("burmese");
+let btn = document.getElementById("translateButton");
+
+if (en.style.display === "none") {
+    en.style.display = "block";
+    mm.style.display = "none";
+    btn.textContent = "Switch to Burmese";
+} else {
+    en.style.display = "none";
+    mm.style.display = "block";
+    btn.textContent = "Switch to English";
+}
+}
+</script>
+
+</body>
+</html>

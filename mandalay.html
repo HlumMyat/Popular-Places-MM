@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mandalay</title>
+
+<style>
+/* SAME animations – unchanged */
+@keyframes gradientMove {
+    0% { background-position: 100% 50%; }
+    50% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }   
+}
+
+@keyframes fadeUp { to { opacity:1; transform:translateY(0);} }
+@keyframes zoomIn { to { opacity:1; transform:scale(1);} }
+@keyframes blurIn { to { opacity:1; filter:blur(0);} }
+
+body {
+    background: linear-gradient(100deg,#ffffff, #40a0e0);
+    margin:0;
+    padding:20px;
+    background-size:400% 400%;
+    animation:gradientMove 10s ease infinite;
+}
+
+.container {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    gap:40px;
+}
+
+img {
+    width:100%;
+    max-width:500px;
+    height:auto;
+    border-radius:15px;
+    opacity:0;
+    transform:scale(0.9);
+    animation:zoomIn 0.8s ease forwards;
+}
+
+h1, p {
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeUp 1s ease forwards;
+}
+
+
+
+button {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        background: linear-gradient(45deg, #ffffff, #ffd9b3);
+        color: #383838;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        transition: 0.3s ease;
+        margin: 5px 0;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            background: linear-gradient(45deg, #000, #444);
+            color: white;
+        }
+</style>
+</head>
+
+<body>
+
+<button onclick="history.back()">⬅️ Back</button>
+<h1>Mandalay (မန္တလေး)</h1>
+<button id="translateButton" onclick="toggleLanguage()">Switch to Burmese</button>
+
+<div class="container">
+
+<div class="text" style="width: 100%; max-width: 500px; height: auto;">
+<div id="english">
+    <h1>Mandaly</h1>
+<p>Mandalay is located on the banks of the Irrawaddy River and is one of the most important cultural and religious cities in Myanmar. It was founded in 1857 as the last royal capital of the Burmese kingdom, and it still preserves many historical and cultural traditions today. Famous landmarks such as Mandalay Palace, Mandalay Hill, and U Bein Bridge attract many visitors each year, especially for their beautiful sunset views. The city is also an important center for Buddhism, where many monks live and study. Today, Mandalay blends rich history, strong traditions, and modern daily life, making it a unique and meaningful place in Myanmar.</p>
+</div>
+
+<div id="burmese" style="display:none;">
+    <h1>မန္တလေး</h1>
+<p>မန္တလေးမြို့သည် ဧရာဝတီမြစ်ကမ်းဘေးတွင် တည်ရှိပြီး မြန်မာနိုင်ငံ၏ ယဉ်ကျေးမှုနှင့် ဘာသာရေးအရေးပါသော မြို့တစ်မြို့ ဖြစ်သည်။ ၁၈၅၇ ခုနှစ်တွင် နောက်ဆုံး မင်းဆက်တော်မြို့တော်အဖြစ် တည်ထောင်ခဲ့ပြီး သမိုင်းအမွေအနှစ်များနှင့် ယဉ်ကျေးမှုဓလေ့များ ကြွယ်ဝစွာ ထိန်းသိမ်းထားသည်။ မန္တလေးနန်းတော်၊ မန္တလေးတောင် နှင့် ဥပိန်တံတားတို့သည် လူသိများသော လည်ပတ်စရာနေရာများ ဖြစ်ကြပြီး နေဝင်ချိန်တွင် မြင်တွေ့ရသော မြင်ကွင်းများသည် အလွန်လှပသည်။ ထို့အပြင် မန္တလေးမြို့သည် သံဃာတော်များ စုဝေးနေထိုင်ရာနေရာဖြစ်သဖြင့် ဘာသာရေးလေ့လာမှုများအတွက်လည်း အရေးပါသည်။ ယနေ့တွင် မန္တလေးမြို့သည် သမိုင်း၊ ယဉ်ကျေးမှုနှင့် ခေတ်မီဘဝပုံစံတို့ကို ပေါင်းစပ်ထားသော မြို့တစ်မြို့အဖြစ် ရပ်တည်လျက်ရှိသည်။</p>
+</div>
+</div>
+
+    <img src="img/mandalay.jpg" alt="Mandalay">
+
+</div>
+
+<script>
+function toggleLanguage(){
+let en=document.getElementById("english");
+let mm=document.getElementById("burmese");
+let btn=document.getElementById("translateButton");
+
+if(en.style.display==="none"){
+en.style.display="block"; mm.style.display="none";
+btn.textContent="Switch to Burmese";
+}else{
+en.style.display="none"; mm.style.display="block";
+btn.textContent="Switch to English";
+}
+}
+</script>
+
+</body>
+</html>

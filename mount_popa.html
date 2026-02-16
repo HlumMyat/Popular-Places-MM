@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mount Popa</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+@keyframes gradientMove {
+    0% { background-position: 100% 50%; }
+    50% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes blurIn {
+    to { opacity: 1; filter: blur(0); }
+}
+
+body {
+    background: linear-gradient(100deg, #88efff, #0066ff);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+h1 {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+}
+
+p {
+    opacity: 0;
+    filter: blur(5px);
+    animation: blurIn 1s ease forwards;
+}
+
+img {
+    width: 100%;
+    border-radius: 15px;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: zoomIn 0.8s ease forwards;
+    transition: 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+button {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+        background: linear-gradient(45deg, #ffffff, #ffd9b3);
+        color: #383838;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        transition: 0.3s ease;
+        margin: 5px 0;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            background: linear-gradient(45deg, #000, #444);
+            color: white;
+        }
+</style>
+</head>
+
+<body>
+
+
+
+<div class="container mt-5 pt-4">
+
+    <button onclick="history.back()">⬅ Back</button>
+
+<h1 class="text-center mb-4">Mount Popa (ပုပ္ပါးတောင်)</h1>
+
+<div class="row align-items-center">
+
+<div class="col-lg-5 col-md-12 mb-4">
+<img src="img/Popa1.jpg" alt="Popa">
+</div>
+
+<div class="col-lg-7 col-md-12">
+
+<button id="translateButton" onclick="toggleLanguage()" class="btn btn-outline-dark mb-3">
+Switch to Burmese
+</button>
+
+<div id="english">
+    <h1>Mount Popa</h1>
+<p>Mount Popa is one of Myanmar’s most famous natural landmarks. Located near Bagan, this extinct volcano rises dramatically from the surrounding plains. At the top stands Mount Popa, home to the sacred Taung Kalat monastery, which attracts many pilgrims each year. Known as the spiritual center of Myanmar’s nat (spirit) worship, Mount Popa offers breathtaking views and a peaceful atmosphere, making it a must-visit destination for both travelers and worshippers.</p>
+</div>
+
+<div id="burmese" style="display:none;">
+    <h1>ပုပ္ပါးတောင်</h1><br>
+<p>ပုပ္ပါးတောင် သည် မြန်မာနိုင်ငံတွင် အထင်ရှားဆုံး သဘာဝအထင်ကရနေရာတစ်ခု ဖြစ်ပါသည်။ ပုဂံအနီးတွင် တည်ရှိပြီး မီးတောင်ဟောင်း တစ်ခုဖြစ်ပါသည်။ ထိပ်တောင်ပေါ်တွင် တည်ရှိသော Mount Popa သည် တောင်ကလပ်ဘုန်းတော်ကြီးကျောင်း၏ တည်နေရာဖြစ်ပြီး ဘာသာရေးယုံကြည်သူများအတွက် အရေးပါသော နတ်ကိုးကွယ်ရာနေရာတစ်ခုလည်း ဖြစ်ပါသည်။ သဘာဝအလှအပနှင့် တိတ်ဆိတ်အေးချမ်းသော ပတ်ဝန်းကျင်ကြောင့် ခရီးသွားများအတွက် လာရောက်လည်ပတ်ရန် ထိုက်တန်သော နေရာတစ်ခု ဖြစ်ပါသည်။</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+function toggleLanguage() {
+let en = document.getElementById("english");
+let mm = document.getElementById("burmese");
+let btn = document.getElementById("translateButton");
+
+if (en.style.display === "none") {
+    en.style.display = "block";
+    mm.style.display = "none";
+    btn.textContent = "Switch to Burmese";
+} else {
+    en.style.display = "none";
+    mm.style.display = "block";
+    btn.textContent = "Switch to English";
+}
+}
+</script>
+
+</body>
+</html>

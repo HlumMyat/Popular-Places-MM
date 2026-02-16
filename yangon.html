@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yangon</title>
+
+<style>
+/* ===== Animations (UNCHANGED) ===== */
+@keyframes gradientMove {
+    0% { background-position: 100% 50%; }
+    50% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }   
+}
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes blurIn {
+    to { opacity: 1; filter: blur(0); }
+}
+
+/* ===== Body ===== */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(100deg, #2c3e50, #f3d53e);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    color: white;
+}
+
+/* ===== Layout ===== */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: zoomIn 0.8s ease forwards;
+    transition: 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+.text-section {
+    max-width: 500px;
+}
+
+/* ===== Text Animation ===== */
+h1 {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+}
+
+p {
+    opacity: 0;
+    filter: blur(5px);
+    animation: blurIn 1s ease forwards;
+}
+
+/* ===== Beautiful Buttons ===== */
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ffffff, #ffe680);
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+    margin: 5px 0;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: linear-gradient(45deg, #000, #444);
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="history.back()">⬅ Back</button>
+
+<h1>Yangon (ရန်ကုန်)</h1>
+
+
+
+<div class="container">
+
+<img src="img/yangon1.jpg" alt="Yangon">
+
+<button id="translateButton" onclick="toggleLanguage()">Switch to Burmese</button>
+
+<div class="text-section" style="background-color: rgba(0,0,0,0.3); border-radius: 15px; padding: 10px; ">
+
+<div id="english">
+    <h1 style="border-bottom: 2px solid white;">Yangon</h1>
+<p> Yangon is the largest city in Myanmar and the former capital of the country. It is the main economic and cultural center of Myanmar. One of the most famous landmarks in Yangon is the Shwedagon Pagoda, which is covered in gold and attracts many visitors every year. Yangon is also known for its colonial buildings, busy markets, and delicious street food.</p>
+</div>
+
+<div id="burmese" style="display:none;">
+    <h1 style="border-bottom: 2px solid white;">ရန်ကုန်</h1>
+<p>ရန်ကုန်မြို့သည် မြန်မာနိုင်ငံ၏ အကြီးဆုံးမြို့ဖြစ်ပြီး ယခင်မြို့တော်လည်း ဖြစ်သည်။ စီးပွားရေးနှင့် ယဉ်ကျေးမှုအတွက် အရေးကြီးသော မြို့တစ်မြို့ ဖြစ်ပါသည်။
+
+ရန်ကုန်တွင် ရွှေတိဂုံစေတီတော်သည် အထင်ရှားဆုံး သမိုင်းဝင်နေရာဖြစ်ပြီး နှစ်စဉ် ခရီးသွားများစွာ လာရောက်လည်ပတ်ကြသည်။ ထို့အပြင် အာရှခေတ် အဆောက်အအုံများ၊ စျေးများနှင့် လမ်းဘေးအစားအစာများကြောင့်လည်း နာမည်ကြီးသည်။
+</p>
+</div>
+
+</div>
+</div>
+
+<script>
+function toggleLanguage(){
+let en=document.getElementById("english");
+let mm=document.getElementById("burmese");
+let btn=document.getElementById("translateButton");
+
+if(en.style.display==="none"){
+en.style.display="block";
+mm.style.display="none";
+btn.textContent="Switch to Burmese";
+}else{
+en.style.display="none";
+mm.style.display="block";
+btn.textContent="Switch to English";
+}
+}
+</script>
+
+</body>
+</html>
